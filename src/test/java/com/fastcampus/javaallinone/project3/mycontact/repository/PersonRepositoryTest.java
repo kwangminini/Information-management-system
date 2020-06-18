@@ -2,6 +2,7 @@ package com.fastcampus.javaallinone.project3.mycontact.repository;
 
 import com.fastcampus.javaallinone.project3.mycontact.domain.Person;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -39,13 +40,13 @@ class PersonRepositoryTest {
 
     @Test
     void constructorTest(){
-        Person person = new Person("kwangmin",10);
+        Person person = new Person("kwangmin",10,"A");
 
     }
 
     @Test
     void hashCodeAndEquals(){
-        Person person1 = new Person("k",10);
-        Person person2 = new Person("k",10);
+        Person person1 = new Person("k",10,"A");
+        Person person2 = new Person("k",10,"A");
     }
 }

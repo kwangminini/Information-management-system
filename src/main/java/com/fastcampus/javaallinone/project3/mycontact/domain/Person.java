@@ -2,9 +2,7 @@ package com.fastcampus.javaallinone.project3.mycontact.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -26,7 +24,7 @@ public class Person {
     private int age;
 
     private String hobby;
-
+    @NonNull
     private String bloodType;
 
     private String address;
@@ -38,5 +36,9 @@ public class Person {
     @ToString.Exclude
     private String phoneNumber;
 
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    //relation
+    @ToString.Exclude
+    private Block block;
 
 }
